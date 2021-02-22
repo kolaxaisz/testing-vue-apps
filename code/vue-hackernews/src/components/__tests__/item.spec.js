@@ -1,4 +1,4 @@
-import Item from '@/components/Item';
+import Item from '@/components/Item.vue';
 import { shallowMount } from '@vue/test-utils';
 
 describe('Unit Test :: Item.vue', () => {
