@@ -17,7 +17,7 @@ function fetch(child) {
       const val = snapshot.val();
       // mark the timestamp when this item is cached
       if (val) val.__lastUpdated = Date.now();
-      cache && cache.set(child, val);
+      if (cache) cache.set(child, val);
       resolve(val);
     }, reject);
   });
