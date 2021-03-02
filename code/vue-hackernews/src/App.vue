@@ -1,5 +1,9 @@
 <template>
-  <item-list />
+  <div>
+    App.vue
+    <item-list />
+  </div>
+
 </template>
 
 <script>

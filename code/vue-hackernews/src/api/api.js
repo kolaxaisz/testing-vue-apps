@@ -12,12 +12,14 @@ function fetch(child) {
   if (cache && cache.has(child)) {
     return Promise.resolve(cache.get(child));
   }
+
   return new Promise((resolve, reject) => {
     api.child(child).once('value', (snapshot) => {
       const val = snapshot.val();
       // mark the timestamp when this item is cached
       if (val) val.__lastUpdated = Date.now();
-      cache.set(child, val);
+      // eslint-disable-next-line no-unused-expressions
+      cache && cache.set(child, val);
       resolve(val);
     }, reject);
   });
